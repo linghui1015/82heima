@@ -9,14 +9,14 @@
             <!-- 表单项 -->
             <el-form-item>
             <!-- 放置组件内容 -->
-              <el-input placeholder="请输入手机号"></el-input>
+              <el-input v-model="loginForm.mobile" placeholder="请输入手机号"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-input style="width:260px" placeholder="验证码"></el-input>
+              <el-input v-model="loginForm.code" style="width:260px" placeholder="验证码"></el-input>
                <el-button style="float:right">发送验证码</el-button>
             </el-form-item>
             <el-form-item>
-                <el-checkbox>我已阅读并同意用户协议和隐私条款</el-checkbox>
+                <el-checkbox v-model="loginForm.check">我已阅读并同意用户协议和隐私条款</el-checkbox>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" style="width:100%">登录</el-button>
@@ -28,7 +28,15 @@
 
 <script>
 export default {
-
+    data () {
+        return {
+            loginForm: {
+                mobile: '', // 手机号
+                code: '', //验证码
+                check: false // 是否勾选
+            }
+        }
+    }
 }
 </script>
 
