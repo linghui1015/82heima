@@ -67,7 +67,7 @@ export default {
     },
     methods: {
         login () {
-            this.$message('提示消息')
+            // this.$message('提示消息')
         }
     }
 }
