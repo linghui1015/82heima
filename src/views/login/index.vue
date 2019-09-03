@@ -5,7 +5,7 @@
             <img src="../../assets/img/logo_index.png" alt="">
         </div>
         <!-- 表单组件 el-form表单容器 -->
-        <el-form :model="loginForm" :rules="loginRules" style="margin-top:20px">
+        <el-form ref='loginForm' :model="loginForm" :rules="loginRules" style="margin-top:20px">
             <!-- 表单项 -->
             <el-form-item prop="mobile">
             <!-- 放置组件内容 -->
@@ -21,12 +21,12 @@
             <el-form-item>
                 <el-button @click="login" type="primary" style="width:100%">登录</el-button>
             </el-form-item>
-        </el-form>
+        </el-form> 
       </el-card>
    </div>
 </template>
 
-<script>
+<script> 
 export default {
     data () {
     let validator = function (rule, value, callBack) {
@@ -68,6 +68,28 @@ export default {
     methods: {
         login () {
             // this.$message('提示消息')
+          this.$refs.loginForm.validate(isOK => {
+              if (isOK) {
+                  //请求
+                  //axios 中 data中放置body参数 params是放置地址的参数
+             this.$axios({
+                 url:'/authorizations',
+                 method:'post',
+                 data: this.loginForm
+             }).then(result => {
+                //console.log(result.data.data.token)
+                //放到前端缓存中
+                 window.localStorage.setItem('user-token', result.data.data.token)
+                 //编程式导航
+                 this.$router.push('/')
+             }).catch(() => {
+                 this.$message({
+                     message: '手机号或者验证码错误',
+                     type: 'warning'
+                 })
+             })     
+              }
+          })  
         }
     }
 }
