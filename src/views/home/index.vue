@@ -1,12 +1,26 @@
 <template>
-   <div class="main">
-       home
-   </div>
+   <!-- 最外层容器 -->
+   <el-container>
+       <!-- 左侧导航 -->
+       <el-aside>
+           <layout-aside></layout-aside>
+       </el-aside>
+       <!-- 右侧 -->
+       <el-conteiner>
+           <!-- 头部 -->
+           <el-header>头部</el-header>
+           <!-- 主要区域 -->
+           <el-main>主体</el-main>
+       </el-conteiner>
+   </el-container>
 </template>
 
 <script>
+import layoutAside from '../../components/home/layout-aside'
 export default {
-
+  components :{
+   'layout-aside' : layoutAside
+   }
 }
 </script>
 
