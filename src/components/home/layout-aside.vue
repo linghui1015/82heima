@@ -14,7 +14,7 @@
       <el-submenu>
           <!-- el-submenu定义具名插槽 title -->
         <template slot="title">
-          <i class="el-icon-s-unfold"></i>
+          <i class="el-icon-s-order"></i>
           <span>内容管理</span>
         </template>
           <el-menu-item>发布文章</el-menu-item>
@@ -24,7 +24,7 @@
       </el-submenu>
        <el-submenu>
         <template slot="title">
-           <i class="el-icon-s-unfold"></i>
+           <i class="el-icon-s-order"></i>
            <span>粉丝管理</span>
         </template>
           <el-menu-item>图文数据</el-menu-item>

@@ -8,7 +8,7 @@
        <!-- 右侧 -->
        <el-conteiner id="rightBox">
            <!-- 头部 -->
-           <el-header>
+            <el-header>
               <layout-header></layout-header>
            </el-header>
            <!-- 主要区域 -->
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import layoutAside from '../../components/home/layout-aside'
-import layoutHeader from '../../components/home/layout-header'
+// import layoutAside from '../../components/home/layout-aside'
+// import layoutHeader from '../../components/home/layout-header'
 export default {
-  components :{
-   'layout-aside' : layoutAside ,
-   'layout-header' : layoutHeader
-   }
+//   components :{
+//    'layout-aside' : layoutAside ,
+//    'layout-header' : layoutHeader
+//    }
 }
 </script>
 
